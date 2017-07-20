@@ -1,5 +1,7 @@
 # SwiftySideMenuO
 
+![SwiftySideMenuO](Images/logo.png)
+
 This is a fully customizable side menu controller written in Swift.
 
 - [Features](#features)
