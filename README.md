@@ -71,3 +71,5 @@ $ pod install
 
 ### SwiftySideMenu Configuration
 
+Updating soon ...
+
