@@ -40,7 +40,19 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'SwiftySideMenu', :git => 'https://github.com/mudithsilva/SwiftySideMenu.git'
+    pod 'SwiftySideMenuO', '~> 1.2.0'
+end
+```
+
+if you want to use library without cocoapods, just use like this:- 
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'SwiftySideMenuO', :git => 'https://github.com/mudithsilva/SwiftySideMenuO.git'
 end
 ```
 
