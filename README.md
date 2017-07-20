@@ -36,7 +36,7 @@ To integrate SwiftySideMenu into your Xcode project using CocoaPods, specify it 
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
@@ -44,11 +44,11 @@ target '<Your Target Name>' do
 end
 ```
 
-if you want to use library without cocoapods, just use like this:- 
+If you want to use library without cocoapods, just use like this:- 
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
