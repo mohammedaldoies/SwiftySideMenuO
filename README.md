@@ -2,6 +2,9 @@
 
 ![SwiftySideMenuO](Images/logo.png)
 
+## Demo
+![SwiftySideMenuOGif](Gif/demo.gif)
+
 This is a fully customizable side menu controller written in Swift.
 
 - [Features](#features)
