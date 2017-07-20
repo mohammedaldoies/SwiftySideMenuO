@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SwiftySideMenuO"
-  s.version      = "1.1.1"
+  s.version      = "1.2.0"
   s.summary      = "SwiftySideMenuO is a simple and versatile side menu control written in Swift."
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/mudithsilva/SwiftySideMenuO.git", :tag => "1.1.1" }
+  s.source       = { :git => "https://github.com/mudithsilva/SwiftySideMenuO.git", :tag => "1.2.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
