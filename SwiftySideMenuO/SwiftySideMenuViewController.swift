@@ -35,6 +35,7 @@ open class SwiftySideMenuViewController: UIViewController, UITableViewDataSource
     private let menuClicableButtonWidth: CGFloat = 57.0
     private var sideViewWidth: CGFloat!
     private var childVC: [SwiftySideMenuChildViewControllers] = []
+    private var isLoadedConterollers: Bool = false
     
     private var selectedIndexPathRow: Int = 0
     
@@ -50,21 +51,24 @@ open class SwiftySideMenuViewController: UIViewController, UITableViewDataSource
     }
     
     override open func viewWillAppear(_ animated: Bool) {
-        self.childVC = self.dataSource!.menuNavigationTabs(self.navigationTableView)
-        let controller = storyboard!.instantiateViewController(withIdentifier: (self.childVC.first?.viewControllerIdentifier!)!)
-        addChildViewController(controller)
-        controller.view.translatesAutoresizingMaskIntoConstraints = false
-        mainView.addSubview(controller.view)
-        
-        NSLayoutConstraint.activate([
-            controller.view.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
-            controller.view.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
-            controller.view.topAnchor.constraint(equalTo: mainView.topAnchor),
-            controller.view.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
-            ])
-        controller.didMove(toParentViewController: self)
-        
-        self.changeTableViewAttributes()
+        if !isLoadedConterollers {
+            self.isLoadedConterollers = true
+            self.childVC = self.dataSource!.menuNavigationTabs(self.navigationTableView)
+            let controller = storyboard!.instantiateViewController(withIdentifier: (self.childVC.first?.viewControllerIdentifier!)!)
+            addChildViewController(controller)
+            controller.view.translatesAutoresizingMaskIntoConstraints = false
+            mainView.addSubview(controller.view)
+            
+            NSLayoutConstraint.activate([
+                controller.view.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
+                controller.view.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
+                controller.view.topAnchor.constraint(equalTo: mainView.topAnchor),
+                controller.view.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
+                ])
+            controller.didMove(toParentViewController: self)
+            
+            self.changeTableViewAttributes()
+        }
     }
     
     override open func didReceiveMemoryWarning() {
