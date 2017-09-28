@@ -71,24 +71,25 @@ $ pod install
 
 ### SwiftySideMenu Configuration
 
-**Step 01**
+#### Step 01
 First you need to add a ViewController in to your storyboard. And the ViewController need to be embed in Navigation Controller.
 
 ![SwiftySideMenuO](Images/storyboard.png)
 
-**Step 02**
+#### Step 02
 Import `SwiftySideMenuO`. 
 Change the `ViewController` type to `SwiftySideMenuViewController` 
 Add `SwiftySideMenuDataSource`
 
 eg:-
 
-```import SwiftySideMenuO
+```
+import SwiftySideMenuO
 
 class MainMenuViewController: SwiftySideMenuViewController, SwiftySideMenuDataSource  {
 
 }
 ```
 
-**Step 03**
+#### Step 03
 
