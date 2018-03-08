@@ -26,7 +26,8 @@ This is a fully customizable side menu controller written in Swift.
 
 - iOS 8.0+
 - Xcode 8.0+
-- Swift 3.0, 3.1, 3.2, and 4.0
+- Swift 3.0+
+- Main Menu and Child Controllers should be in the same storyboard.
 
 ## Communication
 
@@ -152,7 +153,8 @@ Add side menu naviagtion in Child Controllers.
     
     @IBOutlet weak var menuNavigationView: UIView!
     
-    
+   
+
   }
   
   ```
