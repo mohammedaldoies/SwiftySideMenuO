@@ -113,4 +113,62 @@ func menuNavigationTabs(subviewFor sideMenu: UIView) -> UIView {
 }
 ```
 
+#### Step 05
+
+Add side menu pages. Make sure to add correct view controller identifier.
+
+```
+func menuNavigationTabs(_ sideView: UIView) -> [SwiftySideMenuChildViewControllers] {
+        var childViews: [SwiftySideMenuChildViewControllers] = []
+        
+            let childView1 = SwiftySideMenuChildViewControllers()
+            childView1.tabName = "Home"
+            childView1.viewControllerIdentifier = "MainHomeNav"
+            childViews.append(childView1)
+            
+            let childView2 = SwiftySideMenuChildViewControllers()
+            childView2.tabName = "My Profile"
+            childView2.viewControllerIdentifier = "MyProfileNav"
+            childViews.append(childView2)
+            
+            let childView3 = SwiftySideMenuChildViewControllers()
+            childView3.tabName = "Settings"
+            childView3.viewControllerIdentifier = "SettingsNav"
+            childViews.append(childView3)
+        
+
+        return childViews
+}
+
+```
+#### Step 06
+
+Add side menu naviagtion in Child Controllers.
+
+- Add empty View on the top left in Child Controller. 
+
+  ```
+  class MyProfileViewController: UIViewController {
+    
+    @IBOutlet weak var menuNavigationView: UIView!
+    
+    
+  }
+  
+  ```
+  
+  - Connect Side menu image. 
+  
+    ```
+    override func viewDidLoad() {
+        SwiftySideMenuImageView.addMenuImageView(addMenuViewTo: menuNavigationView)
+    }
+    
+    ```
+    
+#### Step 07
+
+- Clean , Build and Run Project :)
+
+
 
