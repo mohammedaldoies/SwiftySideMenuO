@@ -109,6 +109,7 @@ Add your Custom Side view in by calling `menuNavigationTabs(subviewFor sideMenu:
 
 ```
 func menuNavigationTabs(subviewFor sideMenu: UIView) -> UIView {
+        /// let view = CustomSideMenu.getView()
         let view = YourCustomSideView
         return view
 }
@@ -142,6 +143,82 @@ func menuNavigationTabs(_ sideView: UIView) -> [SwiftySideMenuChildViewControlle
 }
 
 ```
+
+ - Switch to Child Controllers in Your Custom View
+ 
+    Call this Functions to open your child controller
+    
+    ```
+    SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 1) // Opend Secondly added Child Controller
+    ```
+    
+    eg:- Custome View Controller - .swift file
+    
+    
+    ```
+    import Foundation
+    import UIKit
+
+    public class CustomSideMenu: UIView {
+    
+    @IBOutlet weak var userStatusButton: UIButton!
+    
+    var isSignIn: Bool = false
+
+    override public func layoutSubviews() {
+        let userID: String = UserDetails.getData(key: UserLoginInfo.userID)
+        if userID != "" {
+            self.isSignIn = true
+            self.userStatusButton.setTitle("Log Out", for: .normal)
+        } else {
+            self.isSignIn = false
+            self.userStatusButton.setTitle("Sign In", for: .normal)
+        }
+    }
+
+    
+    public class func getView() -> CustomSideMenu {
+        
+        let cellNib = UINib(nibName: "CustomSideMenu", bundle: Bundle(for: CustomSideMenu.self))
+        return cellNib.instantiate(withOwner: nil, options: nil)[0] as! CustomSideMenu
+    }
+    
+    @IBAction func showProfile(_ sender: Any) {
+        SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 1)
+    }
+    
+    
+    @IBAction func showHome(_ sender: Any) {
+        SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 0)
+    }
+    
+    @IBAction func showSettings(_ sender: Any) {
+        SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 2)
+    }
+    
+    @IBAction func clickedUserStatus(_ sender: Any) {
+        if self.isSignIn {
+            UserDetails.removeAll()
+            SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 0)
+            self.isSignIn = false
+            self.userStatusButton.setTitle("Sign In", for: .normal)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
+            SwiftySideMenuInfo.shared.swiftySideMenu.present(controller, animated: true, completion: nil)
+        }
+    }
+ 
+ }
+
+```
+
+- Custome View Controller - .xib file (image)
+
+
+![SwiftySideMenuO](Images/CustomSideView.png)
+
+
 #### Step 06
 
 Add side menu naviagtion in Child Controllers.
