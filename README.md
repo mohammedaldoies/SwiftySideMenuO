@@ -93,3 +93,24 @@ class MainMenuViewController: SwiftySideMenuViewController, SwiftySideMenuDataSo
 
 #### Step 03
 
+Connect Data Source and Reference in Main Menu View Controller
+
+```
+override func viewDidLoad() {
+        self.dataSource = self
+        SwiftySideMenuInfo.shared.swiftySideMenu = self
+ }
+```
+
+#### Step 04
+
+Add your Custom Side view in by calling `menuNavigationTabs(subviewFor sideMenu: UIView)`
+
+```
+func menuNavigationTabs(subviewFor sideMenu: UIView) -> UIView {
+        let view = YourCustomSideView
+        return view
+}
+```
+
+
