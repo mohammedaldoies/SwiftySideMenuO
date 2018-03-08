@@ -157,14 +157,14 @@ Add side menu naviagtion in Child Controllers.
   
   ```
   
-  - Connect Side menu image. 
+- Connect Side menu image. 
   
-    ```
-    override func viewDidLoad() {
-        SwiftySideMenuImageView.addMenuImageView(addMenuViewTo: menuNavigationView)
-    }
+  ```
+  override func viewDidLoad() {
+      SwiftySideMenuImageView.addMenuImageView(addMenuViewTo: menuNavigationView)
+  }
     
-    ```
+  ```
     
 #### Step 07
 
