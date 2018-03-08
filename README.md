@@ -156,10 +156,13 @@ func menuNavigationTabs(_ sideView: UIView) -> [SwiftySideMenuChildViewControlle
     
     
     ```
-    import Foundation
-    import UIKit
+      
+      import Foundation
+import UIKit
 
-    public class CustomSideMenu: UIView {
+public class CustomSideMenu: UIView {
+    
+//    SwiftySideMenuInfo.shared.openChildVC(viewName: "My Profile")
     
     @IBOutlet weak var userStatusButton: UIButton!
     
@@ -208,10 +211,19 @@ func menuNavigationTabs(_ sideView: UIView) -> [SwiftySideMenuChildViewControlle
             SwiftySideMenuInfo.shared.swiftySideMenu.present(controller, animated: true, completion: nil)
         }
     }
- 
- }
 
-```
+    
+    /*
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
+}
+
+    ```
 
 - Custome View Controller - .xib file (image)
 
