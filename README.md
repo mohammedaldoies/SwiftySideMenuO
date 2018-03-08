@@ -158,70 +158,60 @@ func menuNavigationTabs(_ sideView: UIView) -> [SwiftySideMenuChildViewControlle
     ```
       
       import Foundation
-import UIKit
+      import UIKit
 
-public class CustomSideMenu: UIView {
+      public class CustomSideMenu: UIView {
     
-//    SwiftySideMenuInfo.shared.openChildVC(viewName: "My Profile")
     
-    @IBOutlet weak var userStatusButton: UIButton!
+         @IBOutlet weak var userStatusButton: UIButton!
     
-    var isSignIn: Bool = false
+         var isSignIn: Bool = false
 
-    override public func layoutSubviews() {
-        let userID: String = UserDetails.getData(key: UserLoginInfo.userID)
-        if userID != "" {
-            self.isSignIn = true
-            self.userStatusButton.setTitle("Log Out", for: .normal)
-        } else {
-            self.isSignIn = false
-            self.userStatusButton.setTitle("Sign In", for: .normal)
+         override public func layoutSubviews() {
+           let userID: String = UserDetails.getData(key: UserLoginInfo.userID)
+           if userID != "" {
+              self.isSignIn = true
+              self.userStatusButton.setTitle("Log Out", for: .normal)
+           } else {
+              self.isSignIn = false
+              self.userStatusButton.setTitle("Sign In", for: .normal)
+           }
         }
-    }
 
     
-    public class func getView() -> CustomSideMenu {
+       public class func getView() -> CustomSideMenu {
         
-        let cellNib = UINib(nibName: "CustomSideMenu", bundle: Bundle(for: CustomSideMenu.self))
-        return cellNib.instantiate(withOwner: nil, options: nil)[0] as! CustomSideMenu
-    }
+          let cellNib = UINib(nibName: "CustomSideMenu", bundle: Bundle(for: CustomSideMenu.self))
+          return cellNib.instantiate(withOwner: nil, options: nil)[0] as! CustomSideMenu
+       }
     
-    @IBAction func showProfile(_ sender: Any) {
-        SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 1)
-    }
+      @IBAction func showProfile(_ sender: Any) {
+         SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 1)
+      }
     
     
-    @IBAction func showHome(_ sender: Any) {
-        SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 0)
-    }
+      @IBAction func showHome(_ sender: Any) {
+         SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 0)
+      }
     
-    @IBAction func showSettings(_ sender: Any) {
-        SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 2)
-    }
+      @IBAction func showSettings(_ sender: Any) {
+         SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 2)
+      }
     
-    @IBAction func clickedUserStatus(_ sender: Any) {
-        if self.isSignIn {
-            UserDetails.removeAll()
-            SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 0)
-            self.isSignIn = false
-            self.userStatusButton.setTitle("Sign In", for: .normal)
-        } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
-            SwiftySideMenuInfo.shared.swiftySideMenu.present(controller, animated: true, completion: nil)
-        }
-    }
-
-    
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
+      @IBAction func clickedUserStatus(_ sender: Any) {
+         if self.isSignIn {
+             UserDetails.removeAll()
+             SwiftySideMenuInfo.shared.swiftySideMenu.showClickedTab(selectedIndex: 0)
+             self.isSignIn = false
+             self.userStatusButton.setTitle("Sign In", for: .normal)
+         } else {
+             let storyboard = UIStoryboard(name: "Main", bundle: nil)
+             let controller = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
+             SwiftySideMenuInfo.shared.swiftySideMenu.present(controller, animated: true, completion: nil)
+         }
      }
-     */
-    
-}
+ 
+   }
 
     ```
 
