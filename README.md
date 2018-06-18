@@ -46,7 +46,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'SwiftySideMenuO', '~> 1.2.0'
+    pod 'SwiftySideMenuO', '~> 1.3.0'
 end
 ```
 
