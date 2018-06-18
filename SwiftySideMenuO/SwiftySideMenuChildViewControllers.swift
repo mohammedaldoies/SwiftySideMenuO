@@ -11,7 +11,7 @@ import Foundation
 public class SwiftySideMenuChildViewControllers: NSObject {
     
     public var tabName: String?
-    public var tabIconName: String? = ""
+    public var storyboardName: String?
     public var viewControllerIdentifier: String?
     
 }

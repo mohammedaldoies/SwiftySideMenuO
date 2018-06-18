@@ -25,7 +25,6 @@ public class SwiftySideMenuImageView: UIView {
     public class func getMenuImageView() -> SwiftySideMenuImageView {
         let cellNib = UINib(nibName: "SwiftySideMenuImageView", bundle: Bundle(for: SwiftySideMenuImageView.self))
         return cellNib.instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
-//        return UINib(nibName: "SwiftySideMenuImageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
     }
     
     public class func addMenuImageView(addMenuViewTo parentView: UIView) {
@@ -33,10 +32,6 @@ public class SwiftySideMenuImageView: UIView {
         let childView = cellNib.instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
         childView.frame = parentView.bounds
         parentView.addSubview(childView)
-        
-//        let childView = UINib(nibName: "SwiftySideMenuImageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
-//        childView.frame = parentView.bounds
-//        parentView.addSubview(childView)
     }
     /*
      // Only override draw() if you perform custom drawing.

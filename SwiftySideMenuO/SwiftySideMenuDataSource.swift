@@ -11,14 +11,8 @@ import UIKit
 
 @objc public protocol SwiftySideMenuDataSource: NSObjectProtocol {
     
-    @objc func menuNavigationTabs(_ tableView: UITableView) -> [SwiftySideMenuChildViewControllers]
+    @objc func menuNavigationTabs(_ sideView: UIView) -> [SwiftySideMenuChildViewControllers]
     
-    @objc optional func menuNavigationTabs(_ tableView: UITableView, backgroundColorFor cell: SwiftySideMenuTableViewCell, indexPath: IndexPath) -> UIColor
-    
-    @objc optional func menuNavigationTabs(backgroundImagefor menuView: UIView) -> UIImage!
-    
-    @objc optional func menuNavigationTabs(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    
-    @objc optional func menuNavigationTabs(subviewFor sideMenuTopBanner: UIView) -> UIView
+    @objc func menuNavigationTabs(subviewFor sideMenu: UIView) -> UIView
     
 }
