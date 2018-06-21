@@ -125,16 +125,19 @@ func menuNavigationTabs(_ sideView: UIView) -> [SwiftySideMenuChildViewControlle
         
             let childView1 = SwiftySideMenuChildViewControllers()
             childView1.tabName = "Home"
+            childView1.storyboardName = "Home"
             childView1.viewControllerIdentifier = "MainHomeNav"
             childViews.append(childView1)
             
             let childView2 = SwiftySideMenuChildViewControllers()
             childView2.tabName = "My Profile"
+            childView2.storyboardName = "MyProfile"
             childView2.viewControllerIdentifier = "MyProfileNav"
             childViews.append(childView2)
             
             let childView3 = SwiftySideMenuChildViewControllers()
             childView3.tabName = "Settings"
+            childView3.storyboardName = "Settings"
             childView3.viewControllerIdentifier = "SettingsNav"
             childViews.append(childView3)
         
